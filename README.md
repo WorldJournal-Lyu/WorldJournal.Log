@@ -1,0 +1,1 @@
+# WorldJournal.Log

@@ -67,9 +67,9 @@ Function Write-Log() {
     switch ($Type) {
         Long { 
             if($Status -eq "Normal"){
-                $msg = (Get-Date).ToString("yyyy/MM/dd HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun
+                $msg = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun
             }else{
-                $msg = (Get-Date).ToString("yyyy/MM/dd HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun + " [" + $Status + "]"
+                $msg = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun + " [" + $Status + "]"
             }
             break 
         }

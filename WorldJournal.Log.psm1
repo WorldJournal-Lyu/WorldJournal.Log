@@ -61,7 +61,8 @@ Function Write-Log() {
         [Parameter(Mandatory = $true)][AllowEmptyString()][string]$Noun,
         [Parameter(Mandatory = $true)][string]$Path,
         [Parameter(Mandatory = $true)][ValidateSet("Long", "Short")][String]$Type,
-        [Parameter(Mandatory = $true)][ValidateSet("Normal", "Good", "Bad", "Warning", "System")][String]$Status
+        [Parameter(Mandatory = $true)][ValidateSet("Normal", "Good", "Bad", "Warning", "System")][String]$Status,
+        [Parameter(Mandatory = $false)][ValidateSet('String', 'Null')][String]$Output = 'Null'
     )
 
     switch ($Type) {
@@ -93,6 +94,10 @@ Function Write-Log() {
     }
 
     $msg | Add-Content $Path
+
+    if($Output -eq 'String'){
+        return $msg
+    }
 
 }
 

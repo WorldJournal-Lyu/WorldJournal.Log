@@ -68,9 +68,9 @@ Function Write-Log() {
     switch ($Type) {
         Long { 
             if($Status -eq "Normal"){
-                $msg = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun
+                $msg = (Get-Date).ToString("HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun
             }else{
-                $msg = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun + " [" + $Status + "]"
+                $msg = (Get-Date).ToString("HH:mm:ss") + " " + $Verb.ToUpper() + " " + $Noun + " [" + $Status + "]"
             }
             break 
         }
@@ -78,11 +78,11 @@ Function Write-Log() {
     }
 
     switch ($Status) {
-        Good { $color = "Green"; break }
-        Bad { $color = "Red"; break }
+        Good    { $color = "Green"; break }
+        Bad     { $color = "Red"; break }
         Warning { $color = "Yellow"; break }
-        System { $color = "Cyan"; break }
-        Normal { $color = (Get-Host).UI.RawUI.ForegroundColor; break } 
+        System  { $color = "Cyan"; break }
+        Normal  { $color = (Get-Host).UI.RawUI.ForegroundColor; break } 
         default { $color = (Get-Host).ui.rawui.ForegroundColor; break } 
     }
 

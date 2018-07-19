@@ -74,7 +74,7 @@ Function Write-Log() {
             }
             break 
         }
-        Short { $msg = "| " + $Verb + " : " + $Noun; break }
+        Short { $msg = "* " + $Verb + " : " + $Noun; break }
     }
 
     switch ($Status) {
